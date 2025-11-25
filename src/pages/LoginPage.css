@@ -49,6 +49,8 @@
   color: #e5e7eb;
 }
 
+/* ===== Osnovni stil za input polja ===== */
+
 .auth-field input {
   border-radius: 0.7rem;
   border: 1px solid rgba(148, 163, 184, 0.6);
@@ -57,6 +59,7 @@
   font-size: 0.9rem;
   padding: 0.55rem 0.75rem;
   outline: none;
+  width: 100%;
   transition: border 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
 }
 
@@ -70,7 +73,61 @@
   background: rgba(15, 23, 42, 0.98);
 }
 
-/* alert poruke */
+/* ===== Password wrapper + dugme unutar inputa ===== */
+
+.auth-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* input i dalje koristi sve iz .auth-field input, samo dodajemo desni padding */
+.auth-input-wrapper input {
+  padding-right: 3.2rem; /* prostor za dugme */
+}
+
+/* dugme "Prikaži / Sakrij" */
+.toggle-password-btn {
+  position: absolute;
+  right: 0.6rem;
+  border: none;
+  background: transparent;
+  color: #9ca3af;
+  font-size: 0.75rem;
+  cursor: pointer;
+  padding: 0.1rem 0.2rem;
+  line-height: 1;
+}
+
+.toggle-password-btn:hover {
+  color: #e5e7eb;
+}
+
+/* ako hoćeš da dugme izgleda kao mali "chip" */
+/*
+.toggle-password-btn {
+  position: absolute;
+  right: 0.45rem;
+  padding: 0.15rem 0.4rem;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  color: #cbd5f5;
+  font-size: 0.7rem;
+}
+.toggle-password-btn:hover {
+  background: rgba(15, 23, 42, 1);
+}
+*/
+
+/* hint ispod input polja */
+
+.auth-hint {
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+
+/* ===== alert poruke ===== */
 
 .auth-alert {
   font-size: 0.8rem;
@@ -90,8 +147,7 @@
   color: #bbf7d0;
 }
 
-/* dugme iz Pocetna.css se već koristi (.btn-primary) */
-/* ovde samo malo prilagodimo */
+/* ===== dugme submit (već koristi .btn-primary iz Pocetna.css) ===== */
 
 .auth-submit {
   width: 100%;
@@ -103,7 +159,7 @@
   cursor: wait;
 }
 
-/* dodatne info */
+/* ===== dodatne info ispod forme ===== */
 
 .auth-extra {
   margin-top: 0.8rem;
@@ -118,7 +174,7 @@
   color: #e5e7eb;
 }
 
-/* responsive */
+/* ===== responsive ===== */
 
 @media (max-width: 640px) {
   .auth-page {

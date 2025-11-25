@@ -6,6 +6,7 @@ import { LoginPage } from './pages/LoginPage';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import MojeFinansije from './pages/MojeFinansije';
+import Register from './pages/Register';
 function App() {
 
   
@@ -17,6 +18,8 @@ function App() {
         <Routes>
               <Route path="/" element={<Pocetna />} />
               <Route path="/login" element={<LoginPage />} />
+              <Route path="/register" element={<Register />} />
+
 
                <Route path="/mojefinansije" element={<MojeFinansije />} />
 
