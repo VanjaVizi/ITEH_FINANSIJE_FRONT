@@ -1,0 +1,414 @@
+.fin-page {
+  min-height: calc(100vh - 60px);
+  background: radial-gradient(circle at top left, #1f2933 0, #020617 45%, #020617 100%);
+  color: #f9fafb;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  padding: 2rem 1.5rem 3rem;
+}
+
+.fin-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.fin-header h1 {
+  font-size: 1.7rem;
+  margin-bottom: 0.3rem;
+}
+
+.fin-header p {
+  font-size: 0.95rem;
+  color: #cbd5f5;
+  max-width: 40rem;
+}
+
+/* Summary kartice */
+
+.fin-summary {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  align-items: stretch;
+}
+
+.fin-summary-card {
+  flex: 1 1 180px;
+  background: radial-gradient(circle at top, #0f172a, #020617);
+  border-radius: 1rem;
+  padding: 0.9rem 1rem;
+  border: 1px solid rgba(148, 163, 184, 0.55);
+  box-shadow: 0 16px 32px rgba(15, 23, 42, 0.9);
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.fin-summary-card span {
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+.fin-summary-card strong {
+  font-size: 1.1rem;
+}
+
+.fin-summary-in {
+  border-color: rgba(34, 197, 94, 0.8);
+}
+
+.fin-summary-out {
+  border-color: rgba(248, 113, 113, 0.85);
+}
+
+.fin-summary-balance {
+  border-color: rgba(56, 189, 248, 0.9);
+}
+
+.fin-pos {
+  color: #4ade80;
+}
+
+.fin-neg {
+  color: #f97373;
+}
+
+.fin-reload {
+  align-self: center;
+  margin-left: auto;
+  margin-right: 0;
+  padding: 0.5rem 0.9rem;
+  font-size: 0.8rem;
+  border-radius: 999px;
+}
+
+/* Alert */
+
+.fin-alert {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  border-radius: 0.7rem;
+  padding: 0.55rem 0.8rem;
+}
+
+.fin-alert-error {
+  background: rgba(248, 113, 113, 0.12);
+  border: 1px solid rgba(248, 113, 113, 0.85);
+  color: #fecaca;
+}
+
+/* Tabele */
+
+.fin-tables {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 1.5rem;
+}
+
+.fin-table-section {
+  background: rgba(15, 23, 42, 0.95);
+  border-radius: 1.1rem;
+  border: 1px solid rgba(148, 163, 184, 0.45);
+  box-shadow: 0 18px 36px rgba(15, 23, 42, 0.95);
+  padding: 1rem 0.9rem;
+}
+
+.fin-table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.6rem;
+  padding-inline: 0.2rem 0.3rem;
+}
+
+.fin-table-header h2 {
+  font-size: 1.1rem;
+}
+
+.fin-table-count {
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+/* react-data-table-component override malo */
+
+.rdt_TableHead {
+  background: rgba(15, 23, 42, 0.98);
+}
+
+.rdt_TableHeadRow {
+  border-bottom: 1px solid rgba(148, 163, 184, 0.5);
+}
+
+.rdt_TableCell {
+  font-size: 0.8rem;
+}
+
+.rdt_TableRow {
+  font-size: 0.8rem;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+  .fin-tables {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .fin-page {
+    padding-inline: 1rem;
+  }
+
+  .fin-summary {
+    flex-direction: column;
+  }
+}
+/* Tabele */
+
+.fin-tables {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 1.5rem;
+}
+
+.fin-table-section {
+  border-radius: 1.1rem;
+  padding: 1rem 0.9rem;
+  box-shadow: 0 18px 36px rgba(15, 23, 42, 0.95);
+}
+
+/* Prilivi = zelenkasto */
+
+.fin-table-section-in {
+  background: radial-gradient(circle at top, #022c22, #020617);
+  border: 1px solid rgba(34, 197, 94, 0.9);
+}
+
+.fin-table-section-in .fin-table-header h2 {
+  color: #bbf7d0;
+}
+
+.fin-table-section-in .rdt_TableHead {
+  background: transparent;
+}
+
+.fin-table-section-in .rdt_TableHeadRow {
+  border-bottom: 1px solid rgba(34, 197, 94, 0.7);
+}
+
+.fin-table-section-in .rdt_TableRow {
+  font-size: 0.8rem;
+  background: rgba(15, 23, 42, 0.98);
+}
+
+.fin-table-section-in .rdt_TableRow:nth-child(even) {
+  background: rgba(22, 163, 74, 0.12);
+}
+
+.fin-table-section-in .rdt_TableRow:hover {
+  background: rgba(22, 163, 74, 0.2);
+}
+
+.fin-table-section-in .rdt_TableCell {
+  font-size: 0.8rem;
+  color: #e5e7eb;
+}
+
+/* Odlivi = crvenkasto */
+
+.fin-table-section-out {
+  background: radial-gradient(circle at top, #3b0a0a, #020617);
+  border: 1px solid rgba(248, 113, 113, 0.9);
+}
+
+.fin-table-section-out .fin-table-header h2 {
+  color: #fecaca;
+}
+
+.fin-table-section-out .rdt_TableHead {
+  background: transparent;
+}
+
+.fin-table-section-out .rdt_TableHeadRow {
+  border-bottom: 1px solid rgba(248, 113, 113, 0.7);
+}
+
+.fin-table-section-out .rdt_TableRow {
+  font-size: 0.8rem;
+  background: rgba(15, 23, 42, 0.98);
+}
+
+.fin-table-section-out .rdt_TableRow:nth-child(even) {
+  background: rgba(248, 113, 113, 0.12);
+}
+
+.fin-table-section-out .rdt_TableRow:hover {
+  background: rgba(248, 113, 113, 0.2);
+}
+
+.fin-table-section-out .rdt_TableCell {
+  font-size: 0.8rem;
+  color: #e5e7eb;
+}
+
+/* Zajednički header za sekcije */
+
+.fin-table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.6rem;
+  padding-inline: 0.2rem 0.3rem;
+}
+
+.fin-table-header h2 {
+  font-size: 1.1rem;
+}
+
+.fin-table-count {
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+/* OSNOVNO ZA SEKCIJE (ostavi ako već imaš, ili ovako) */
+.fin-tables {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 1.5rem;
+}
+
+.fin-table-section {
+  border-radius: 1.1rem;
+  padding: 1rem 0.9rem;
+  box-shadow: 0 18px 36px rgba(15, 23, 42, 0.95);
+}
+
+/* ==================== PRILIVI (ZELENO) ==================== */
+
+.fin-table-section-in {
+  background: radial-gradient(circle at top, #022c22, #020617);
+  border: 1px solid rgba(34, 197, 94, 0.9);
+}
+
+.fin-table-section-in .fin-table-header h2 {
+  color: #bbf7d0;
+}
+
+/* Header tabele */
+.fin-table-section-in .rdt_TableHead,
+.fin-table-section-in .rdt_TableHeadRow,
+.fin-table-section-in .rdt_TableHeadRow .rdt_TableCell {
+  background: rgba(15, 23, 42, 0.98) !important;
+  color: #e5e7eb !important;
+  border-bottom: 1px solid rgba(34, 197, 94, 0.6);
+}
+
+/* Telo tabele */
+.fin-table-section-in .rdt_TableBody .rdt_TableRow {
+  background: rgba(15, 23, 42, 0.96);
+  border-bottom: 1px solid rgba(34, 197, 94, 0.18);
+  font-size: 0.8rem;
+}
+
+.fin-table-section-in .rdt_TableBody .rdt_TableRow:nth-child(even) {
+  background: rgba(6, 78, 59, 0.35);
+}
+
+.fin-table-section-in .rdt_TableBody .rdt_TableRow:hover {
+  background: rgba(22, 163, 74, 0.45);
+}
+
+.fin-table-section-in .rdt_TableCell {
+  color: #e5e7eb;
+}
+
+/* Paginacija */
+.fin-table-section-in .rdt_Pagination {
+  background: transparent;
+  border-top: 1px solid rgba(34, 197, 94, 0.4);
+  color: #cbd5f5;
+}
+
+/* ==================== ODLIVI (CRVENO) ==================== */
+
+.fin-table-section-out {
+  background: radial-gradient(circle at top, #3b0a0a, #020617);
+  border: 1px solid rgba(248, 113, 113, 0.9);
+}
+
+.fin-table-section-out .fin-table-header h2 {
+  color: #fecaca;
+}
+
+/* Header tabele */
+.fin-table-section-out .rdt_TableHead,
+.fin-table-section-out .rdt_TableHeadRow,
+.fin-table-section-out .rdt_TableHeadRow .rdt_TableCell {
+  background: rgba(15, 23, 42, 0.98) !important;
+  color: #e5e7eb !important;
+  border-bottom: 1px solid rgba(248, 113, 113, 0.6);
+}
+
+/* Telo tabele */
+.fin-table-section-out .rdt_TableBody .rdt_TableRow {
+  background: rgba(15, 23, 42, 0.96);
+  border-bottom: 1px solid rgba(248, 113, 113, 0.2);
+  font-size: 0.8rem;
+}
+
+.fin-table-section-out .rdt_TableBody .rdt_TableRow:nth-child(even) {
+  background: rgba(127, 29, 29, 0.35);
+}
+
+.fin-table-section-out .rdt_TableBody .rdt_TableRow:hover {
+  background: rgba(248, 113, 113, 0.45);
+}
+
+.fin-table-section-out .rdt_TableCell {
+  color: #e5e7eb;
+}
+
+/* Paginacija */
+.fin-table-section-out .rdt_Pagination {
+  background: transparent;
+  border-top: 1px solid rgba(248, 113, 113, 0.45);
+  color: #cbd5f5;
+}
+
+/* Zajednički header iznad tabele */
+
+.fin-table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.6rem;
+  padding-inline: 0.2rem 0.3rem;
+}
+
+.fin-table-header h2 {
+  font-size: 1.1rem;
+}
+
+.fin-table-count {
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+/* Parni redovi – zelenkasti (prilivi) */
+.fin-table-section-in .rdt_TableBody .rdt_TableRow:nth-child(even) {
+  background: rgba(6, 78, 59, 0.8);   /* tamnije, više kontrasta */
+}
+
+/* Parni redovi – crvenkasti (odlivi) */
+.fin-table-section-out .rdt_TableBody .rdt_TableRow:nth-child(even) {
+  background: rgba(127, 29, 29, 0.8); /* tamnije, više kontrasta */
+}
+
+/* Za svaki slučaj, da tekst uvek bude svetao */
+.fin-table-section-in .rdt_TableCell,
+.fin-table-section-out .rdt_TableCell {
+  color: #f9fafb;
+}
