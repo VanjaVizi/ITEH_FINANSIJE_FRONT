@@ -1,7 +1,10 @@
-import React, { useMemo } from 'react'
+import React, { useMemo, useState } from 'react'
 import useMojeTransakcije from '../hooks/useMojeTransakcije';
 import DataTable from "react-data-table-component";
 import './MojeFinansije.css'
+import useMojeKategorije from '../hooks/useMojeKategorije';
+import useMojiNovcanici from '../hooks/useMojiNovcanici';
+import AddTransakcijaModal from '../components/AddTransakcijaModal';
 
 const formatAmount = (value) => {
   const num = Number(value) || 0;
@@ -13,6 +16,11 @@ const formatAmount = (value) => {
 const MojeFinansije = () => {
 
    const { transakcije, loading, error, reload } = useMojeTransakcije();
+   const { kategorijePrilivi, kategorijeOdlivi } = useMojeKategorije();
+   const { wallets, setWallets } = useMojiNovcanici();
+
+
+  const [isAddOpen, setIsAddOpen] = useState(false);
 
 
   const prilivi = useMemo(
@@ -90,6 +98,14 @@ const commonColumns = [
                 Ovde vidiš sve svoje transakcije: posebno PRILIVE i ODLIVE, kao i
                 ukupan saldo.
               </p>
+              <button
+                type="button"
+                className="btn-primary fin-add-btn"
+                onClick={() => setIsAddOpen(true)}
+              >
+                + Nova transakcija
+              </button>
+
             </header>
 
         <section className="fin-summary">
@@ -161,7 +177,16 @@ const commonColumns = [
 
 
 
-
+        <AddTransakcijaModal
+                isOpen={isAddOpen}
+                onClose={() => setIsAddOpen(false)}
+                wallets={wallets}
+                kategorijePrilivi={kategorijePrilivi}
+                kategorijeOdlivi={kategorijeOdlivi}
+                onSaved={async () => {
+                  await reload(); // ponovo učitaj listu
+                }}
+              />
 
 
 
