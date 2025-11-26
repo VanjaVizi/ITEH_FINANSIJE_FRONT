@@ -6,7 +6,8 @@ import { LoginPage } from './pages/LoginPage';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import MojeFinansije from './pages/MojeFinansije';
-import Register from './pages/Register';
+import Register from './pages/Register'; 
+import MojiNovcanici from './pages/MojiNovcanici';
 function App() {
 
   
@@ -22,6 +23,8 @@ function App() {
 
 
                <Route path="/mojefinansije" element={<MojeFinansije />} />
+               <Route path="/mojinovcanici" element={<MojiNovcanici />} />
+ 
 
 
           {/* <Route path="/" element={<HomePage />} />

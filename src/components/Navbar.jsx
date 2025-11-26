@@ -43,6 +43,9 @@ const Navbar = () => {
           <Link to="/mojefinansije" className="href">
             Moje finansije
           </Link>
+             <Link to="/mojinovcanici" className="href">
+            Moji novcanici
+          </Link>
           <button
             type="button"
             className="href href-button"

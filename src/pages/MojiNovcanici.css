@@ -1,0 +1,321 @@
+.wallets-page {
+  min-height: calc(100vh - 60px);
+  background: radial-gradient(circle at top left, #1f2933 0, #020617 45%, #020617 100%);
+  color: #f9fafb;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  padding: 2rem 1.5rem 3rem;
+}
+
+.wallets-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.wallets-header h1 {
+  font-size: 1.7rem;
+  margin-bottom: 0.3rem;
+}
+
+.wallets-header p {
+  font-size: 0.95rem;
+  color: #cbd5f5;
+  max-width: 36rem;
+}
+
+/* Layout */
+
+.wallets-layout {
+  margin-top: 2.2rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 1.8rem;
+  align-items: flex-start;
+}
+
+.wallets-section-title {
+  font-size: 1.15rem;
+  margin-bottom: 0.4rem;
+}
+
+.wallets-list-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.wallets-list {
+  margin-top: 0.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.wallets-placeholder {
+  margin-top: 0.8rem;
+  font-size: 0.9rem;
+  color: #9ca3af;
+}
+
+/* Kartice novčanika */
+
+.wallet-card {
+  background: rgba(15, 23, 42, 0.9);
+  border-radius: 1rem;
+  padding: 1rem 1rem 0.9rem;
+  border: 1px solid rgba(148, 163, 184, 0.45);
+  box-shadow: 0 12px 25px rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(10px);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
+}
+
+.wallet-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px rgba(15, 23, 42, 0.95);
+  border-color: rgba(94, 234, 212, 0.8);
+}
+
+.wallet-card-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.6rem;
+}
+
+.wallet-card-header h3 {
+  font-size: 1rem;
+  margin: 0 0 0.25rem;
+}
+
+.wallet-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.wallet-chip {
+  font-size: 0.75rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  background: rgba(15, 23, 42, 0.9);
+}
+
+.wallet-chip-type {
+  text-transform: capitalize;
+}
+
+.wallet-chip-currency {
+  font-weight: 600;
+}
+
+.wallet-chip-status {
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.wallet-chip-active {
+  border-color: rgba(34, 197, 94, 0.9);
+  background: rgba(22, 163, 74, 0.18);
+}
+
+.wallet-chip-inactive {
+  border-color: rgba(248, 113, 113, 0.9);
+  background: rgba(248, 113, 113, 0.18);
+}
+
+.wallet-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  align-items: flex-start;
+}
+
+.wallet-btn-sm {
+  padding: 0.3rem 0.7rem;
+  font-size: 0.78rem;
+  border-radius: 999px;
+}
+
+.wallet-btn-danger {
+  border-color: rgba(248, 113, 113, 0.9) !important;
+}
+
+/* Telo kartice */
+
+.wallet-card-body {
+  border-top: 1px dashed rgba(148, 163, 184, 0.5);
+  padding-top: 0.55rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.wallet-balance span {
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+.wallet-balance strong {
+  font-size: 1.05rem;
+}
+
+.wallet-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  font-size: 0.8rem;
+  color: #e5e7eb;
+}
+
+.wallet-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.wallet-meta-item span:first-child {
+  color: #9ca3af;
+}
+
+/* Forma */
+
+.wallets-form-section {
+  width: 100%;
+}
+
+.wallets-form-card {
+  background: radial-gradient(circle at top, #0f172a, #020617);
+  border-radius: 1.4rem;
+  border: 1px solid rgba(148, 163, 184, 0.55);
+  box-shadow: 0 24px 45px rgba(15, 23, 42, 0.95);
+  padding: 1.4rem 1.3rem 1.3rem;
+}
+
+.wallets-form-subtitle {
+  font-size: 0.85rem;
+  color: #cbd5f5;
+  margin-bottom: 0.9rem;
+}
+
+.wallet-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.wallet-form-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.7rem;
+}
+
+/* Polja */
+
+.wallet-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.wallet-field label {
+  font-size: 0.85rem;
+  color: #e5e7eb;
+}
+
+.wallet-field select {
+  border-radius: 0.7rem;
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  background: rgba(15, 23, 42, 0.85);
+  color: #e5e7eb;
+  font-size: 0.9rem;
+  padding: 0.55rem 0.75rem;
+  outline: none;
+  width: 100%;
+  transition: border 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
+}
+
+.wallet-field select:focus {
+  border-color: #22c55e;
+  box-shadow: 0 0 0 1px rgba(34, 197, 94, 0.5);
+  background: rgba(15, 23, 42, 0.98);
+}
+
+/* Toggle aktivan */
+
+.wallet-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  margin-top: 0.2rem;
+  color: #e5e7eb;
+}
+
+.wallet-toggle input {
+  width: 14px;
+  height: 14px;
+  accent-color: #22c55e;
+}
+
+/* Alerti */
+
+.wallet-alert {
+  font-size: 0.8rem;
+  border-radius: 0.7rem;
+  padding: 0.5rem 0.7rem;
+  margin-bottom: 0.3rem;
+}
+
+.wallet-alert-info {
+  background: rgba(34, 197, 94, 0.12);
+  border: 1px solid rgba(34, 197, 94, 0.9);
+  color: #bbf7d0;
+}
+
+.wallet-alert-error {
+  background: rgba(248, 113, 113, 0.12);
+  border: 1px solid rgba(248, 113, 113, 0.85);
+  color: #fecaca;
+}
+
+/* Dugmad u formi */
+
+.wallet-form-actions {
+  margin-top: 0.3rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.wallet-btn-reset {
+  padding: 0.45rem 0.9rem;
+  font-size: 0.8rem;
+  border-radius: 999px;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+  .wallets-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .wallets-form-card {
+    order: -1;
+  }
+}
+
+@media (max-width: 640px) {
+  .wallets-page {
+    padding-inline: 1rem;
+  }
+
+  .wallets-form-card {
+    padding-inline: 1.1rem;
+  }
+
+  .wallet-form-row {
+    grid-template-columns: 1fr;
+  }
+}
