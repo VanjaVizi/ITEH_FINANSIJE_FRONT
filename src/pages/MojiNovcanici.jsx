@@ -4,21 +4,11 @@ import './MojiNovcanici.css';
 import TextInput from '../components/TextInput';
 import PrimaryButton from '../components/PrimaryButton';
 import { MdEdit,MdDelete  } from "react-icons/md";
+import useMojiNovcanici from '../hooks/useMojiNovcanici';
+import useWalletTypes from '../hooks/useWalletTypes';
+import useCurrencies from '../hooks/useCurrencies';
 
-const walletTypes = [
-  { value: "banka", label: "Bankovni račun" },
-  { value: "kes", label: "Keš" },
-  { value: "stednja", label: "Štednja" },
-  { value: "kripto", label: "Kripto" },
-  { value: "ostalo", label: "Ostalo" },
-];
-
-const currencies = [
-  { value: "RSD", label: "RSD" },
-  { value: "EUR", label: "EUR" },
-  { value: "USD", label: "USD" },
-];
-
+ 
 const getUserFromStorage = () => {
   try {
     const raw = localStorage.getItem("user");
@@ -31,16 +21,15 @@ const getUserFromStorage = () => {
 
 
 const MojiNovcanici = () => {
-    const [wallets, setWallets] = useState([]);
-    const [loading, setLoading] = useState(true);
 
+    const { wallets, setWallets, loading, loadError } = useMojiNovcanici();
+    const walletTypes = useWalletTypes();
+     const currencies = useCurrencies();
 
     const [saving, setSaving] = useState(false);
     const [error, setError] = useState("");
     const [info, setInfo] = useState("");
-
-
-
+ 
     const [naziv, setNaziv] = useState("");
     const [tip, setTip] = useState("banka");
     const [valuta, setValuta] = useState("RSD");
@@ -63,23 +52,10 @@ const MojiNovcanici = () => {
     setInfo("");
     setError("");
   };
-  const loadWallets = async () => {
-    setLoading(true);
-    setError("");
-    try {
-      const res = await api.get("/novcanici/moji");
-     
-      setWallets(res.data.data || []);
-    } catch (err) {
-      console.error(err);
-      setError("Ne mogu da učitam novčanike. Pokušaj ponovo.");
-    } finally {
-      setLoading(false);
-    }
-  };
-     useEffect(() => {
-        loadWallets();
-    }, []);
+
+
+
+
     const handleSubmit = async (e) => {
          e.preventDefault();
         setError("");
